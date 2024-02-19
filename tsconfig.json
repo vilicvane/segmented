@@ -1,11 +1,11 @@
 {
   "references": [
     {
-      "path": "src/library",
+      "path": "src/library"
     },
     {
-      "path": "src/test",
-    },
+      "path": "src/test"
+    }
   ],
-  "files": [],
+  "files": []
 }
