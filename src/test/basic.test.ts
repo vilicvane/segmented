@@ -1,11 +1,12 @@
 import {jest} from '@jest/globals';
+import type {AssertTrue, IsEqual} from 'tslang';
 
 import {segment} from '../library/index.js';
 
 test('basic', async () => {
-  const result = await segment(async () => 'hello').then(
-    async value => value.length,
-  );
+  const result = await segment(async () => 'hello').then(value => value.length);
+
+  type _Assert = AssertTrue<IsEqual<typeof result, number>>;
 
   expect(result).toBe(5);
 });
