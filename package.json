@@ -1,6 +1,6 @@
 {
   "name": "segmented",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Segmented async operations to abort.",
   "repository": "https://github.com/vilicvane/segmented.git",
   "license": "MIT",
