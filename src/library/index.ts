@@ -1,4 +1,4 @@
-const NEVER = new Promise<never>(() => {});
+export const never = new Promise<never>(() => {});
 
 export type SegmentAbortCallback = () => void;
 
@@ -15,7 +15,7 @@ export class SegmentedClass<T, TPrevious> {
     if (previousPromise) {
       this.promise = previousPromise.then(value => {
         if (context.aborted) {
-          return NEVER;
+          return never;
         }
 
         return segment(value);
