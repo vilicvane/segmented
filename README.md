@@ -3,9 +3,41 @@
 [![MIT License](https://img.shields.io/badge/license-MIT-999999?style=flat-square)](./LICENSE)
 [![Discord](https://img.shields.io/badge/chat-discord-5662f6?style=flat-square)](https://discord.gg/wEVn2qcf8h)
 
-# segmented
+# Segmented
 
 Segmented async operations to abort.
+
+## Installation
+
+```sh
+npm install segmented
+```
+
+## Usage
+
+```ts
+import {segment} from 'segmented';
+
+const segmented = segment(() => fetch('https://example.com'))
+  .then(response => response.json())
+  .then(console.log);
+
+segmented.abort();
+```
+
+The `segmented` object returned is also an callable equivalent to `abort()` method:
+
+```ts
+import {segment} from 'segmented';
+
+useEffect(
+  () =>
+    segment(() => fetch('https://example.com'))
+      .then(response => response.json())
+      .then(console.log),
+  [],
+);
+```
 
 ## License
 
